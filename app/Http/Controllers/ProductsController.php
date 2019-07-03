@@ -125,7 +125,8 @@ class ProductsController extends Controller
             $order_product->product_id=$id;
             $order_product->quentity=$details['quantity'];
             $order_product->order_id=$counts;
-            $total += $details['price'] * $details['quantity'];
+            $order_product->total=$total;
+          //  $total += $details['price'] * $details['quantity'];
 //$total=$total+(($details['quantity'])*($details['price']));
             $order_product->save();
         }

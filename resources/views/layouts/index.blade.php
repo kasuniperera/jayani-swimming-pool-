@@ -41,7 +41,7 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	
 	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="css/fonts/flaticon/font/flaticon.css">
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
@@ -52,6 +52,10 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 	</head>
 	<body>
@@ -432,7 +436,7 @@
 						<h4>Information</h4>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="/index"><i class="icon-check"></i> Our Company</a></li>
+								<li><a href="/index"><i class="fas fa-city"></i> Our Company</a></li>
 								
 								<li><a href="/services"><i class="icon-check"></i> Our services</a></li>
 

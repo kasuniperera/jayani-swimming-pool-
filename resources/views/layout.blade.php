@@ -229,7 +229,7 @@
             @foreach($data['categories'] as $category)
             <div class="col-lg-4 box_col">
                 <div class="box">
-                    <div class="box_image"><img src="{{$category->photo}}" alt=""></div>
+                    <div class="box_image"  ><img src="{{$category->photo}}" alt="" style="height:200px;width:300px;"></div>
                     <div class="box_title trans_200" value="{{$category->id}}"><a href="{{url('showcat/'.$category->id) }}">{{$category->name}}</a></div>
                 </div>
             </div>

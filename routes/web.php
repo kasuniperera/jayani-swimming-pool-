@@ -142,4 +142,18 @@ Route::view('/', 'welcome');
 
 
         Route::view('/contract', 'contract');
+        Route::get('/dynamic_pdf/pdf', 'DynamicPDFController@pdf');
+
+        Route::get('/contract' ,function(){
+                $contracts=App\Contract::all();
+                return view('contract')->with('contracts',$contracts);
+            });
+        
+            Route::post('/saveContract','ContractController@store');              
+            Route::get('deleteContract/{id}','ContractController@deleteContract');
+            Route::get('updateContract/{id}','ContractController@updateContract');
+            Route::post('editContract','ContractController@editContract');
+        
+        
+
         

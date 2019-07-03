@@ -82,22 +82,24 @@
 <h2 style="color:white;margin-left:10px;margin-bottom: 20px;font-size: 30px;margin-top: 10px; font:italic;" >Estimate Calculator</h2>
 
     
-  <label for="" style="color:white;margin-left:10px;margin-bottom: 10px;font-size: 20px">Length   </label>
+  <label for="" style="color:white;margin-left:10px;margin-bottom: 10px;font-size: 20px">Length &nbsp;  </label>
   <input type="text" name="length" id="length" placeholder="length" class="length">
     
-  <label for="" style="color:white;margin-left:10px;margin-bottom: 15px;font-size: 20px">Width </label>
+  <label for="" style="color:white;margin-left:10px;margin-bottom: 15px;font-size: 20px">Width &nbsp;&nbsp; </label>
   <input type="text" name="width" id="width" placeholder="width" class="width">
 
-  <label for="" style="color:white;margin-left:10px;margin-bottom: 15px;font-size: 20px">Stands</label>
+  <label for="" style="color:white;margin-left:10px;margin-bottom: 15px;font-size: 20px">Stands &nbsp;</label>
   <input type="text" name="stand" id="stand" placeholder="stand" class="stand">
 
-  <label for="" style="color:white;margin-left:10px;margin-bottom: 10px;font-size: 20px">Motor</label>
+  <label for="" style="color:white;margin-left:10px;margin-bottom: 10px;font-size: 20px">Motor &nbsp;&nbsp;&nbsp;</label>
   <input type="text" name="motor" id="motor" placeholder="motor" class="motor">
 
-  <label for="" style="color:white;margin-left:10px;margin-bottom: 10px;font-size: 20px">Filters</label>
+  <label for="" style="color:white;margin-left:10px;margin-bottom: 10px;font-size: 20px">Filters &nbsp;&nbsp;</label>
   <input type="text" name="filter" id="filter" placeholder="filter" class="filter">
-    
-  <button type="submit">Calculate</button>
+	<center>
+	<button type="submit" >Calculate</button>
+	</center>
+  
 
 </form>
 

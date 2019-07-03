@@ -17,8 +17,7 @@ class DynamicPDFController extends Controller
 
     function get_customer_data()
     {
-     $customer_data = DB::table('tbl_customer')
-         ->limit(10)
+     $customer_data = DB::table('products')
          ->get();
      return $customer_data;
     }
@@ -38,21 +37,18 @@ class DynamicPDFController extends Controller
      <table width="100%" style="border-collapse: collapse; border: 0px;">
       <tr>
     <th style="border: 1px solid; padding:12px;" width="20%">Name</th>
-    <th style="border: 1px solid; padding:12px;" width="30%">Address</th>
-    <th style="border: 1px solid; padding:12px;" width="15%">City</th>
-    <th style="border: 1px solid; padding:12px;" width="15%">Postal Code</th>
-    <th style="border: 1px solid; padding:12px;" width="20%">Country</th>
+    <th style="border: 1px solid; padding:12px;" width="30%">Description</th>
+    <th style="border: 1px solid; padding:12px;" width="15%">Price</th>
    </tr>
      ';  
      foreach($customer_data as $customer)
      {
       $output .= '
       <tr>
-       <td style="border: 1px solid; padding:12px;">'.$customer->CustomerName.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->Address.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->City.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->PostalCode.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->Country.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$customer->name.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$customer->description.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$customer->price.'</td>
+       
       </tr>
       ';
      }

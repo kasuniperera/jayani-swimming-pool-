@@ -61,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/orderview">
+            <a class="nav-link" href="/contract">
               <i class="material-icons">notifications</i>
               <p>Contracts</p>
             </a>
