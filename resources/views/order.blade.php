@@ -63,9 +63,24 @@
         </tr>
         </tfoot>
     </table>
+    @foreach($errors->all() as $error)
+                    <div class="alert alert-danger" role="alert">
+                        {{$error}}
+                    </div>
+                @endforeach
+    <form method="post" action="/order">
+                    {{csrf_field()}}
+                    <div class="col-lg-8">
+                    <input type="text" class="form-control" name="address" placeholder="Enter your adress">
+                    <input type="text" class="form-control" name="phone" placeholder="Enter your phone number">
+                    <br>
+                    
+                    
+                    <input type="submit" class="btn btn-warning" value="Place Order">
+                    </div>
+                    </form>
+    
   
-  <a href="/order" >Accept</a>
-
 @endsection
 
 

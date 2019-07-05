@@ -83,13 +83,7 @@
             </ul>
         </nav>
 
-        <!-- Search -->
-        <div class="search">
-            <form action="#" class="search_form" id="sidebar_search_form">
-                <input type="text" class="search_input" placeholder="Search" required="required">
-                <button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </form>
-        </div>
+        
 
         <!-- Cart -->
 
@@ -144,8 +138,7 @@
                     <a href="{{ url('cart') }}" >
                     <div class="col-lg-6 col-sm-6 col-6">
                     
-                      {{ count(session('cart')) }}
-                       
+                      {{ count(session('cart')) }}                       
                      </div>
                      </a> 
                     </div>

@@ -27,7 +27,7 @@
                         @if(!$order->is_accepted)
                         <tr>
                             <td>
-                            <div><a href="ordersee/{{'$order->id'}}" class="btn btn-primary">{{$order->id}}</a></div>
+                            <div><a href="ordersee/{{$order->id}}" class="btn btn-primary">{{$order->id}}</a></div>
                             </td>
                             <td>{{$order->user_id}}</td>
                             <td>{{$order->created_at}}</td>                            

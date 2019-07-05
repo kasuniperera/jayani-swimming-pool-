@@ -45,11 +45,7 @@ class GetProductsController extends Controller
             abort(404);
         }
         $orders=Order::all();
-        while($orders){
-            if(!$orders->is_accepted){
-                
-            }
-        }
+       
         $product->delete();
         $products=Product::all();
         $tags=Tag::all();

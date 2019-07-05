@@ -15,13 +15,19 @@
     <br>
         <form action="/editsocial" method="post">
         {{csrf_field()}}
-        
+            <h6>Instagram</h6>
             <input type="text" class="form-control" name="instagram" value="{{$socials->instagram}}" />
+            <h6>Google</h6>
             <input type="text" class="form-control" name="google" value="{{$socials->google}}" />
+            <h6>Pinterest</h6>
             <input type="text" class="form-control" name="pinterest" value="{{$socials->pinterest}}" />
+            <h6>Facebook</h6>
             <input type="text" class="form-control" name="facebook" value="{{$socials->facebook}}" />
+            <h6>Twitter</h6>
             <input type="text" class="form-control" name="twitter" value="{{$socials->twitter}}" />
+            <h6>Youtube</h6>
             <input type="text" class="form-control" name="youtube" value="{{$socials->youtube}}" />
+            <h6>Tumblr</h6>
             <input type="text" class="form-control" name="tumblr" value="{{$socials->tumblr}}" />
            
             <input type="hidden" name="id" value="{{$socials->id}}"/>

@@ -15,8 +15,9 @@
     <br>
         <form action="/editBlog" method="post">
         {{csrf_field()}}
-        
+            <h6>Description</h6>
             <input type="text" class="form-control" name="description" value="{{$blogs->description}}" />
+            <h6>Photo</h6>
             <input type="text" class="form-control" name="photo" value="{{$blogs->photo}}" />
             <br>
             <br>
@@ -24,7 +25,6 @@
             <input type="hidden" name="id" value="{{$blogs->id}}"/>
 
             <input type="submit" class="btn btn-warning" value="Update"/>
-            &nbsp;&nbsp;<input type="button" class="btn btn-danger" value="Cancel"/>
            
         </form>
     </div>

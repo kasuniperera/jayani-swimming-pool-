@@ -15,13 +15,18 @@
     <br>
         <form action="/editContract" method="post">
         {{csrf_field()}}
-        
+            <h6>Customer's ID</h6>
             <input type="text" class="form-control" name="customer_id" value="{{$contracts->customer_id}}" />
+            <h6>Customer's Name</h6>
             <input type="text" class="form-control" name="customer_name" value="{{$contracts->customer_name}}" />
+            <h6>Address</h6>
             <input type="text" class="form-control" name="address" value="{{$contracts->address}}" />
+            <h6>Contact Number</h6>
             <input type="text" class="form-control" name="phone" value="{{$contracts->phone}}" />
-            <input type="text" class="form-control" name="income" value="{{$contracts->income}}" />
-            <input type="text" class="form-control" name="outcome" value="{{$contracts->outcome}}" />
+            <h6>Income</h6>
+            <input type="integer" class="form-control" name="income" value="{{$contracts->income}}" />
+            <h6>Outcome</h6>
+            <input type="integer" class="form-control" name="outcome" value="{{$contracts->outcome}}" />
 
 
             <br>

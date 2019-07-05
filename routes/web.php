@@ -12,7 +12,7 @@
 |
 */
 
-Route::view('/', 'welcome');
+
     Auth::routes();
 
     Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
@@ -26,7 +26,7 @@ Route::view('/', 'welcome');
     Route::post('/register/employee', 'Auth\RegisterController@createEmployee');
 
     Route::view('/home', 'home')->middleware('auth');
-    Route::view('/admin', 'admin');
+    Route::view('/admin', 'admin')->middleware('auth');
     Route::view('/employee', 'employee');
 
     Route::view('/userDetails', 'Auth\RegisterController@editUser');
@@ -34,7 +34,7 @@ Route::view('/', 'welcome');
 
     //---------------------frontend routes-----------------------------------------
 
-
+    Route::get('/','PagesController@index');
     Route::get('/index','PagesController@index');
     Route::get('/services','PagesController@index2');
     Route::get('/blog','PagesController@index3');
@@ -55,7 +55,7 @@ Route::view('/', 'welcome');
     Route::patch('update-cart', 'ProductsController@update'); 
     Route::delete('remove-from-cart', 'ProductsController@remove');
     Route::get('/buy','ProductsController@buy')->name('cart');
-    Route::get('/order','ProductsController@order')->name('order');
+    Route::post('/order','ProductsController@order')->name('order');
     Route::get('/orderview','ProductsController@orderview');
     Route::get('ordersee/{id}','ProductsController@ordersee');
     Route::get('markascompleted/{id}','ProductsController@updated');
@@ -142,7 +142,7 @@ Route::view('/', 'welcome');
 
 
         Route::view('/contract', 'contract');
-        Route::get('/dynamic_pdf/pdf', 'DynamicPDFController@pdf');
+       
 
         Route::get('/contract' ,function(){
                 $contracts=App\Contract::all();
@@ -154,6 +154,20 @@ Route::view('/', 'welcome');
             Route::get('updateContract/{id}','ContractController@updateContract');
             Route::post('editContract','ContractController@editContract');
         
+        Route::get('/losdchart', 'ContractController@loadChart');
+
+        Route::get('/employeeList','AdminController@employee');
+        Route::get('deleteEmployee/{id}','AdminController@deleteEmployee');
+        Route::get('/dashboard','AdminController@dashboard'); 
         
+        Route::get('/customerList','AdminController@customer');
+        Route::get('deleteCustomer/{id}','AdminController@deleteCustomer'); 
+
+        Route::get('/report','ReportController@index');
+        Route::get('/report/pdf_customer', 'ReportController@pdf_Customer');
+        Route::get('/report/pdf_employee', 'ReportController@pdf_Employee');
+        Route::get('/report/pdf_product', 'ReportController@pdf_Product');
+        Route::get('/report/pdf_contract', 'ReportController@pdf_Contract');
+
 
         

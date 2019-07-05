@@ -19,26 +19,16 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="/userDetails">
-              <i class="material-icons">dashboard</i>
-              <p>Profile</p>
-            </a>
-          </li>
-          <li class="nav-item ">
             <a class="nav-link" href="/store">
-              <i class="material-icons">person</i>
+              <i class="material-icons">dashboard</i>
               <p>Store</p>
             </a>
           </li>
-          
-          
-          
-        
-          
+              
         </ul>
       </div>
     </div>
-    <div class="main-panel">
+    <div class="main-panel" >
       <!-- Navbar -->
       
             </div>

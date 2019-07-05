@@ -33,7 +33,17 @@ class ProductsController extends Controller
         $categories= Category::all();
         $abouts=About::find(1);
         $socials=Social::find(1);
-        return view('cart')->with('data',['products'=>$products,'tags'=>$tags,'categories'=>$categories,'abouts'=>$abouts,'socials'=>$socials]);
+        $items = session()->get('cart');
+        $total=0;
+        foreach($items as $id => $details ){
+            $total += $details['price'] * $details['quantity'];     
+        }
+        if($total==0){
+            return view('products')->with('data',['products'=>$products,'tags'=>$tags,'categories'=>$categories,'abouts'=>$abouts,'socials'=>$socials]);
+        }else{
+            return view('cart')->with('data',['products'=>$products,'tags'=>$tags,'categories'=>$categories,'abouts'=>$abouts,'socials'=>$socials]);
+
+        }
        // return view('cart');
     }
     
@@ -116,6 +126,18 @@ class ProductsController extends Controller
         $order = new Order;    
         $order->user_id=$user->id;
         $total=0;
+        foreach($items as $id => $details ){
+            $total += $details['price'] * $details['quantity'];     
+        }
+        foreach($items as $id => $details ) {
+        $order->total=$total;         
+        }
+        $this->validate($request,[
+            'address'=>'required',
+            'phone'=>'required',
+        ]);
+        $order->address=$request->address;
+        $order->phone=$request->phone;
         $order->save();
         $orders=Order::all();
         $counts = Order::count();
@@ -125,22 +147,22 @@ class ProductsController extends Controller
             $order_product->product_id=$id;
             $order_product->quentity=$details['quantity'];
             $order_product->order_id=$counts;
-            $order_product->total=$total;
-          //  $total += $details['price'] * $details['quantity'];
-//$total=$total+(($details['quantity'])*($details['price']));
+            $total += $details['price'] * $details['quantity'];
             $order_product->save();
         }
         $cart = session()->get('cart'); 
-        foreach($items as $id => $details ) {              
+        foreach($items as $id => $details ) {
+                         
                 unset($cart[$id]); 
                 session()->put('cart', $cart);           
         }
-        $order->total=$total;
+        
         $tags=Tag::all();
         $categories=Category::all();
         $abouts=About::find(1);
         $socials=Social::find(1);
-        return view('layout')->with('data',['tags'=>$tags,'categories'=>$categories,'abouts'=>$abouts,'socials'=>$socials]);
+        $products = Product::all(); 
+        return view('products')->with('data',['tags'=>$tags,'categories'=>$categories,'abouts'=>$abouts,'socials'=>$socials,'products'=>$products]);
 
     }
     

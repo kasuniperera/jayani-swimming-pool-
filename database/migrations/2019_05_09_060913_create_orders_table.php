@@ -18,7 +18,9 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->boolean('is_accepted')->default(0);
             $table->boolean('is_email')->default(0);
-            $table->decimal('total',6,2);
+            $table->integer('total');
+            $table->string('address');
+            $table->string('phone',10);
             $table->timestamps();
         });
     }

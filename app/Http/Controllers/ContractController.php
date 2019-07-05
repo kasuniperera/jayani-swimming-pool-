@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contract;
+use DB;
 class ContractController extends Controller
 {
 
@@ -83,6 +84,17 @@ class ContractController extends Controller
 
         return view('contract')->with('contracts',$contracts);
 
+    }
+
+    public function loadChart()
+    {
+        $customer_data=DB::table('contractors')->get();
+
+        $data = array(
+            'cities' => array('Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'),
+            'income' => array($customer_data->income),
+        );
+        return response()->json($data);
     }
 
 }

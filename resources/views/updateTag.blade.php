@@ -15,7 +15,7 @@
     <br>
         <form action="/editTag" method="post">
         {{csrf_field()}}
-        
+        <h6>Name</h6>
             <input type="text" class="form-control" name="name" value="{{$tags->name}}" />
             <br>
             <br>

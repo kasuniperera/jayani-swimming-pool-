@@ -15,8 +15,9 @@
     <br>
         <form action="/editCategory" method="post">
         {{csrf_field()}}
-        
+            <h6>Name</h6>
             <input type="text" class="form-control" name="name" value="{{$categories->name}}" />
+            <h6>Photo</h6>
             <input type="text" class="form-control" name="photo" value="{{$categories->photo}}" />
             <br>
             <br>
@@ -24,7 +25,7 @@
             <input type="hidden" name="id" value="{{$categories->id}}"/>
 
             <input type="submit" class="btn btn-warning" value="Update"/>
-            &nbsp;&nbsp;<input type="button" class="btn btn-danger" value="Cancel"/>
+            
            
         </form>
     </div>

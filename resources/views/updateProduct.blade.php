@@ -15,10 +15,13 @@
     <br>
         <form action="/editProducts" method="post">
         {{csrf_field()}}
-        
+            <h6>Name</h6>
             <input type="text" class="form-control" name="name" value="{{$data['products']->name}}" />
+            <h6>Description</h6>
             <input type="text" class="form-control" name="description" value="{{$data['products']->description}}" />
+            <h6>Photo</h6>
             <input type="text" class="form-control" name="photo" value="{{$data['products']->photo}}" />
+            <h6>Price</h6>
             <input type="integer" class="form-control" name="price" value="{{$data['products']->price}}" />
             <br>
             <br>

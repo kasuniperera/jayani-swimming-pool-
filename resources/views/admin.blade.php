@@ -1,6 +1,7 @@
 @extends('layouts.auth')
 
     @section('content')
+    
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -72,20 +73,23 @@
               <p>About</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/report">
+              <i class="material-icons">library_books</i>
+              <p>Report</p>
+            </a>
+          </li>
         
           
         </ul>
       </div>
     </div>
-    <div class="main-panel">
-      <!-- Navbar -->
-      
-            </div>
+    
         </div>
     </div>
     <div class="main-panel">
-    
-       
+        
+    <div class="container-fluid">
           <div class="row" style="width:1450px;">
             <div class="col-lg-3 col-md-6 col-sm-6" >
               <div class="card card-stats">
